@@ -18,12 +18,13 @@ const IconWrapper = styled.div`
     ${({ vertical }) => vertical && 'float: none;'}
 `
 
-const renderIcon = icon => styled(icon)`
-    ${({ vertical }) => vertical
-    ? `width: 61px;
-    height: 61px;`
-    : `width: 36px;
-    height: 36px;`}
+const renderIcon = (icon, vertical) => styled(icon)`
+    && {
+    ${vertical ? `width: 61px;
+      height: 61px;
+    ` : `width: 36px;
+      height: 36px;`}
+    }
 `
 
 const DescriptionWrapper = styled.div`
@@ -41,11 +42,11 @@ const Description = styled.p`
 const Title = StyledTitle.withComponent('h4')
 
 const InfoArea = ({ icon, iconColor, vertical, title, description }) => {
-  const Icon = renderIcon(icon)
+  const Icon = renderIcon(icon, vertical)
   return (
     <Container>
       <IconWrapper color={iconColor} vertical={vertical}>
-        <Icon vertical={vertical} />
+        <Icon />
       </IconWrapper>
       <DescriptionWrapper>
         <Title>{title}</Title>
