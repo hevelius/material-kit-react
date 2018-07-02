@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Title from '../Title'
+import StyledTitle from '../Title'
 
 const getColorFromProps = ({ theme, color }) => theme[color] || theme.gray
 
@@ -38,6 +38,8 @@ const Description = styled.p`
   font-size: 14px;
 `
 
+const Title = StyledTitle.withComponent('h4')
+
 const InfoArea = ({ icon, iconColor, vertical, title, description }) => {
   const Icon = renderIcon(icon)
   return (
@@ -46,7 +48,7 @@ const InfoArea = ({ icon, iconColor, vertical, title, description }) => {
         <Icon vertical={vertical} />
       </IconWrapper>
       <DescriptionWrapper>
-        <Title basedOn='h4'>{title}</Title>
+        <Title>{title}</Title>
         <Description>{description}</Description>
       </DescriptionWrapper>
     </Container>

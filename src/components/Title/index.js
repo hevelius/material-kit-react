@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
 const StyledTitle = styled.h1`
   color: #3C4858;
@@ -9,15 +8,4 @@ const StyledTitle = styled.h1`
   font-family: "Roboto Slab", "Times New Roman", serif;
 `
 
-const Title = basedOn =>
-  StyledTitle.withComponent(basedOn)
-
-Title.propTypes = {
-  basedOn: PropTypes.string
-}
-
-Title.defaultProps = {
-  basedOn: 'h1'
-}
-
-export default Title
+export default StyledTitle
